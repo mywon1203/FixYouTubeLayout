@@ -1,6 +1,7 @@
 const WATCH_PATH = "/watch";
 const GUIDE_WIDTH_PX = 240;
 const GUIDE_GAP_PX = 16;
+const RECOMMENDATIONS_WIDTH_PX = 400;
 const STYLE_ID = "fix-youtube-guide-style";
 
 let lastPath = window.location.pathname;
@@ -139,6 +140,27 @@ function ensureStyleTag() {
       max-width: none !important;
     }
 
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary {
+      width: ${RECOMMENDATIONS_WIDTH_PX}px !important;
+      min-width: ${RECOMMENDATIONS_WIDTH_PX}px !important;
+      max-width: ${RECOMMENDATIONS_WIDTH_PX}px !important;
+      margin-left: 16px !important;
+      flex: 0 0 ${RECOMMENDATIONS_WIDTH_PX}px !important;
+    }
+
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary ytd-compact-video-renderer,
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary ytd-compact-radio-renderer,
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary ytd-compact-playlist-renderer {
+      max-width: ${RECOMMENDATIONS_WIDTH_PX}px !important;
+    }
+
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary #thumbnail,
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary a#thumbnail {
+      max-width: 168px !important;
+      width: 168px !important;
+      min-width: 168px !important;
+    }
+
     @media (max-width: 1312px) {
       html[data-fixyt-watch="1"] #guide {
         width: 220px !important;
@@ -152,6 +174,21 @@ function ensureStyleTag() {
       html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #columns {
         width: auto !important;
         margin-left: 0 !important;
+      }
+
+      html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        flex: 1 1 auto !important;
+      }
+
+      html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary #thumbnail,
+      html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #secondary a#thumbnail {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
       }
 
       html[data-fixyt-watch="1"] ytd-watch-flexy #columns {

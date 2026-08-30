@@ -170,6 +170,11 @@ function ensureStyleTag() {
       justify-content: flex-start !important;
     }
 
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy {
+      --ytd-watch-flexy-width-ratio: 16 !important;
+      --ytd-watch-flexy-height-ratio: 9 !important;
+    }
+
     html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #primary {
       box-sizing: border-box !important;
       width: auto !important;
@@ -181,13 +186,36 @@ function ensureStyleTag() {
       flex: 1 1 0% !important;
     }
 
-    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #primary-inner,
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #primary-inner {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+    }
+
     html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #player,
     html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #player-container-outer,
     html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #player-container-inner {
       width: 100% !important;
       min-width: 0 !important;
-      max-width: none !important;
+      max-width: var(--ytd-watch-flexy-max-player-width) !important;
+    }
+
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #player {
+      margin-inline: auto !important;
+      background: #000 !important;
+    }
+
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #movie_player .html5-video-container {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy #movie_player video.html5-main-video {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      object-fit: contain !important;
     }
 
     html[data-fixyt-watch="1"][data-fixyt-sidebar-open="1"]:not([data-fixyt-theater="1"]):not([data-fixyt-fullscreen="1"]) ytd-watch-flexy:not([split-scroll][fixed-panel-expanded]):not([split-scroll][fixed-panel-watch-next]) #secondary {
